@@ -18,7 +18,7 @@ void build() {
 
   add.BLOCK_BEGIN();
   add.LABEL("MODES: ");
-  add.BUTTON("rainbow","[2] красный");
+  add.BUTTON("rainbow","Random color");
   add.BLOCK_END(); 
 
   add.LABEL("SETTINGS");
