@@ -62,7 +62,7 @@ void animation() {
 void waiting() {
   if(data.rainbow)
   {
-    leds[2] = CRGB::Red;
+    leds[2] = CHSV( 0, 255, 0);;
     FastLED.show();
   }
   

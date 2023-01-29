@@ -16,7 +16,10 @@ void build() {
   add.LED_RED("ledP", (!pirTmr.elapsed() && !onlineTmr.elapsed()));
   add.BLOCK_END();
 
-  add.SWITCH("rainbow"); 
+  add.BLOCK_BEGIN();
+  add.LABEL("MODES: ");
+  add.BUTTON("rainbow","[2] красный");
+  add.BLOCK_END(); 
 
   add.LABEL("SETTINGS");
   add.BLOCK_BEGIN();
