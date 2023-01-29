@@ -10,6 +10,10 @@ bool checkPortal() {
       data.color = portal.getInt("col");
       sendPacket();
     }
+    if(portal.click("rainbow")){
+      data.rainbow=!data.rainbow;
+    }
+
     if (portal.click()) memory.update();
   }
 
@@ -21,6 +25,7 @@ bool checkPortal() {
     if (portal.update("br")) portal.answer(data.bright);
     if (portal.update("sw")) portal.answer(data.power);
     if (portal.update("col")) portal.answer(data.color);
+    if (portal.update("rainbow")) portal.answer(!data.rainbow);
   }
 
   // формы

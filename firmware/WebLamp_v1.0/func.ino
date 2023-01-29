@@ -59,6 +59,15 @@ void animation() {
   }
 }
 
+void waiting() {
+  if(data.rainbow)
+  {
+    leds[2] = CRGB::Red;
+    FastLED.show();
+  }
+  
+}
+
 // локальный запуск портала. При любом исходе заканчивается ресетом платы
 void localPortal(IPAddress ip) {
   // создаём точку с именем WLamp и предыдущим успешным IP

@@ -3,7 +3,7 @@ void build() {
   BUILD_BEGIN(s);
 
   add.THEME(GP_DARK);
-  add.AJAX_UPDATE("ledL,ledR,ledP,sw,br,col", 2000);
+  add.AJAX_UPDATE("ledL,ledR,ledP,sw,br,col,rainbow", 2000);
 
   add.LABEL("STATUS");
   add.BLOCK_BEGIN();
@@ -15,6 +15,8 @@ void build() {
   add.LABEL("Remote PIR:");
   add.LED_RED("ledP", (!pirTmr.elapsed() && !onlineTmr.elapsed()));
   add.BLOCK_END();
+
+  add.SWITCH("rainbow"); 
 
   add.LABEL("SETTINGS");
   add.BLOCK_BEGIN();

@@ -11,7 +11,7 @@
 #define LED_PIN D1    // пин ленты
 #define BTN_PIN D2    // пин кнопки
 #define PIR_PIN D5    // пин PIR (ИК датчика)
-#define LED_AMOUNT 30 // кол-вл светодиодов
+#define LED_AMOUNT 12 // кол-вл светодиодов
 #define BTN_LEVEL 1   // 1 - кнопка подключает VCC, 0 - подключает GND
 #define USE_PIR 1     // 1 - использовать PIR (ИК датчик) на этой лампе
 #define IGNORE_PIR 0  // 1 - игнорировать сигнал PIR (ИК датчика) с удалённой лампы
@@ -61,6 +61,7 @@ struct LampData {
   char local[20] = "AG_lamp_1";
   char remote[20] = "AG_lamp_2";
   char host[32] = "broker.mqttdashboard.com";
+  bool rainbow = 0;
   uint16_t port = 1883;
   uint8_t ip[4] = {0, 0, 0, 0};
 
@@ -95,6 +96,7 @@ void loop() {
   heartbeat();    // отправляем пакет что мы онлайн
   memory.tick();  // проверяем обновление настроек
   animation();    // эффект ленты
+  waiting();
   buttonTick();   // действия кнопки
   mqttTick();     // проверяем входящие
   portal.tick();  // пинаем портал
