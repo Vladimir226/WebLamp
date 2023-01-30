@@ -51,7 +51,7 @@ void animation() {
     CRGB ncol = CHSV(data.color, 255, curBr);
     CRGB ccol = leds[0];
     if (ccol != ncol) ccol = blend(ccol, ncol, 17);
-
+    waiting()    
     // выводим на ленту
     fill_solid(leds, LED_AMOUNT, ccol);
     FastLED.setBrightness(data.bright);
@@ -62,7 +62,10 @@ void animation() {
 void waiting() {
   if(data.rainbow)
   {
-    leds[2] = CRGB( 0, 255, 0);;
+    for (int i=0;i<LED_AMOUNT,i++)
+    {
+      if(i%2==0) leds[i] = CRGB( 0, 255, 0); 
+    }
     FastLED.show();
   }
   

@@ -96,7 +96,6 @@ void loop() {
   heartbeat();    // отправляем пакет что мы онлайн
   memory.tick();  // проверяем обновление настроек
   animation();    // эффект ленты
-  waiting();
   buttonTick();   // действия кнопки
   mqttTick();     // проверяем входящие
   portal.tick();  // пинаем портал
